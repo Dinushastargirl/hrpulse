@@ -127,7 +127,7 @@ export default function Login() {
             </div>
           </div>
           
-          <h1 className="text-3xl font-black text-center text-zinc-900 mb-2">HR</h1>
+          <h1 className="text-3xl font-black text-center text-zinc-900 mb-2">HR Pulse</h1>
           <p className="text-zinc-500 text-center mb-10 font-medium">Enterprise Management Portal</p>
 
           <form onSubmit={handleLogin} className="space-y-6">
