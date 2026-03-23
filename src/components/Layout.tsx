@@ -73,7 +73,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="flex flex-col items-center gap-4">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
-          <p className="text-zinc-500 font-medium">Loading HR Pulse...</p>
+          <p className="text-zinc-500 font-medium">Loading HR...</p>
         </div>
       </div>
     );
@@ -101,7 +101,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="md:hidden bg-white border-b border-zinc-200 p-4 flex items-center justify-between sticky top-0 z-50">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold">H</div>
-          <span className="text-lg font-bold tracking-tight text-zinc-900">HR Pulse</span>
+          <span className="text-lg font-bold tracking-tight text-zinc-900">HR</span>
         </div>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 text-zinc-600 hover:bg-zinc-100 rounded-lg">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -116,7 +116,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="h-full flex flex-col">
           <div className="p-6 hidden md:flex items-center gap-3">
             <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-200">H</div>
-            <span className="text-xl font-bold tracking-tight text-zinc-900">HR Pulse</span>
+            <span className="text-xl font-bold tracking-tight text-zinc-900">HR</span>
           </div>
 
           <nav className="flex-1 px-4 space-y-1 mt-4">
