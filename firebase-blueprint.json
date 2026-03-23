@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Employee or Admin user profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "username": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["employee", "admin"] },
+        "department": { "type": "string" },
+        "profilePic": { "type": "string" },
+        "mustResetPassword": { "type": "boolean" },
+        "leaveBalance": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "username", "role"]
+    },
+    "LeaveRequest": {
+      "title": "Leave Request",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "leaveType": { "type": "string" },
+        "reason": { "type": "string" },
+        "startDate": { "type": "string", "format": "date" },
+        "endDate": { "type": "string", "format": "date" },
+        "status": { "type": "string", "enum": ["Pending", "Approved", "Rejected"] },
+        "isUrgent": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "date": { "type": "string" },
+        "checkIn": { "type": "string", "format": "date-time" },
+        "checkOut": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Task": {
+      "title": "Task",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "completed": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Holiday": {
+      "title": "Holiday",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "type": { "type": "string", "enum": ["public", "company"] }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": { "schema": "User", "description": "User profiles" },
+    "/leaveRequests/{requestId}": { "schema": "LeaveRequest", "description": "Leave requests" },
+    "/attendance/{attendanceId}": { "schema": "Attendance", "description": "Attendance logs" },
+    "/tasks/{taskId}": { "schema": "Task", "description": "Employee tasks" },
+    "/holidays/{holidayId}": { "schema": "Holiday", "description": "Company holidays" }
+  }
+}
